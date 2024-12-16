@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Love Story - First Anniversary</title>
+    <style>
+        :root {
+            --primary-color: #ff6b8b;
+            --secondary-color: #8b5ff7;
+            --text-color: #333;
+            --background-color: #1a1a2e;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--background-color);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        /* Photo Grid Styles */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .photo-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            transform: translateY(0);
+        }
+
+        /* Title and Message Styles */
+        .title {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleFade 1s ease-in;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .message {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .message h2 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .message p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Timeline Styles */
+        .timeline {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-item:hover {
+            transform: translateX(10px);
+        }
+
+        .timeline-location {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Animations */
+        @keyframes titleFade {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Heart Animation */
+        .heart-container {
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .heart {
+            position: relative;
+            width: 50px;
+            height: 45px;
+            background: var(--primary-color);
+            transform: rotate(45deg);
+            animation: heartbeat 1.2s infinite;
+        }
+
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 45px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            left: -25px;
+        }
+
+        .heart:after {
+            top: -25px;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1) rotate(45deg); }
+            50% { transform: scale(1.1) rotate(45deg); }
+            100% { transform: scale(1) rotate(45deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .date {
+                font-size: 1.2rem;
+            }
+            
+            .message {
+                padding: 1.5rem;
+            }
+
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="heart-container">
+            <div class="heart"></div>
+        </div>
+        
+        <h1 class="title">Our Love Story</h1>
+        <p class="date">February 2nd, 2024</p>
+
+        <div class="photo-grid">
+            <div class="photo-item fade-in">
+                <img src="./images/photo_1_2024-12-15_19-08-05.jpg" alt="Elevator Moment">
+                <div class="photo-overlay">
+                    <h3>Sweet Elevator Moments</h3>
+                    <p>Where every moment becomes magical</p>
+                </div>
+            </div>
+            <div class="photo-item fade-in" style="animation-delay: 0.2s">
+                <img src="./images/photo_2_2024-12-15_19-08-05.jpg" alt="Studio Photoshoot">
+                <div class="photo-overlay">
+                    <h3>Studio Love</h3>
+                    <p>Professional photos, genuine emotions</p>
+                </div>
+            </div>
+            <div class="photo-item fade-in" style="animation-delay: 0.4s">
+                <img src="./images/photo_4_2024-12-15_19-08-05.jpg" alt="Cute Glasses">
+                <div class="photo-overlay">
+                    <h3>Adorable Moments</h3>
+                    <p>Just being ourselves</p>
+                </div>
+            </div>
+            <div class="photo-item fade-in" style="animation-delay: 0.6s">
+                <img src="./images/photo_6_2024-12-15_19-08-05 - Copy.jpg" alt="Arcade Date">
+                <div class="photo-overlay">
+                    <h3>Arcade Adventures</h3>
+                    <p>Gaming and laughing together</p>
+                </div>
+            </div>
+            <div class="photo-item fade-in" style="animation-delay: 0.8s">
+                <img src="./images/photo_7_2024-12-15_19-08-05 - Copy.jpg" alt="Heart Pose">
+                <div class="photo-overlay">
+                    <h3>Heart to Heart</h3>
+                    <p>Making memories together</p>
+                </div>
+            </div>
+            <div class="photo-item fade-in" style="animation-delay: 0.8s">
+                <img src="./images/photo_8_2024-12-15_19-08-05 - Copy.jpg" alt="Sunset Bliss">
+                <div class="photo-overlay">
+                    <h3>Golden Hour</h3>
+                    <p>Embracing the beauty of nature</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="message">
+            <h2>To My Dearest</h2>
+            <p>From our first encounter at Beltei International University to our magical movie date at Aeon Mall 2, every moment with you has been precious. Whether we're taking silly photos in elevators, playing at the arcade, or just being ourselves, you make every moment special. Here's to our beautiful beginning and countless more memories to come! ❤️</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <h3>First Meeting</h3>
+                <div class="timeline-location">Beltei International University</div>
+                <p>Where our paths crossed during IC studies</p>
+            </div>
+            <div class="timeline-item fade-in" style="animation-delay: 0.3s">
+                <h3>First Date</h3>
+                <div class="timeline-location">Aeon Mall 2</div>
+                <p>Our special movie date together</p>
+            </div>
+            <div class="timeline-item fade-in" style="animation-delay: 0.6s">
+                <h3>First Love</h3>
+                <div class="timeline-location">February 2nd, 2024</div>
+                <p>The day our love story officially began</p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
